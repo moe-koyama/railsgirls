@@ -3,7 +3,7 @@
 <h1>Ideas</h1>
 
 <div id="ideas">
-<% @ideas.each do |idea| %>
+<% @records.each do |idea| %>
   <%= render idea %>
   <p>
     <%= link_to "Show this idea", idea %>
@@ -12,3 +12,4 @@
 </div>
 
 <%= link_to "New idea", new_idea_path %>
+<%== pagy_bootstrap_nav(@pagy) %>

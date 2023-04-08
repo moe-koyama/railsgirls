@@ -1,9 +1,10 @@
 class IdeasController < ApplicationController
   before_action :set_idea, only: %i[ show edit update destroy ]
-
+  include Pagy::Backend
   # GET /ideas or /ideas.json
   def index
-    @ideas = Idea.all
+    # @ideas = Idea.all
+    @pagy, @records = pagy(Idea.all)
   end
 
   # GET /ideas/1 or /ideas/1.json
